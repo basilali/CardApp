@@ -5,7 +5,6 @@ export function CardView({ status = "notSelected", value, suite, clickCard, type
     return (
         <div className={`card-container ${status} ${type}`} onClick={clickCard}>
             <div className={ `card-content ${isWildcard ? 'wildcard-suit' : (isRedSuit ? 'red-suit' : 'black-suit')}` }>
-                { isWildcard && <div className="card-wildcard">WILDCARD</div> }
                 <div className="value">{value}</div>
                 <img 
                     src={suitSvg}
