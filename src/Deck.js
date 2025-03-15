@@ -44,7 +44,7 @@ export class Deck {
         const suite = Deck.SUITES[Math.floor(Math.random() * Deck.SUITES.length)];
         const value = Deck.VALUES[Math.floor(Math.random() * Deck.VALUES.length)];
         
-        return new Card(this.nextId++, suite, value, 1);
+        return new Card(this.nextId++, suite, value, Card.TYPES.WILDCARD);
     }
 
     isEmpty() {

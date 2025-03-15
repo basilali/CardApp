@@ -2,19 +2,10 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  -webkit-user-select: none;  /* Safari */
-  -moz-user-select: none;     /* Firefox */
-  -ms-user-select: none;      /* IE10+/Edge */
-  user-select: none;          /* Standard */
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -24,11 +15,6 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
@@ -107,7 +93,6 @@ button {
   overflow: auto;
 }
 
-/* Common card styles */
 .notSelected, .selected {
   width: 100px;
   height: 140px;
@@ -130,14 +115,7 @@ button {
 }
 /* Wildcard styling */
 .notSelected.WILDCARD, .selected.WILDCARD {
-  background: black;
-  color: darkorange;
-  border-color: darkorange;
-}
-
-.card-suite {
-  font-size: 18px;
-  font-weight: bold;
+  background: orangered;
 }
 
 .button-container {
@@ -154,9 +132,7 @@ button {
     height: 140px;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     cursor: pointer;
-    transition: transform 0.2s ease;
 }
 
 .card-content {
@@ -186,7 +162,7 @@ button {
   color: white;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
@@ -199,13 +175,21 @@ button {
 }
 
 .button-description {
-  margin: 10px 0;
+  margin: 15px 0;
   display: flex;
-  align-items: center;
   gap: 10px;
 }
 
 .button-name {
   font-weight: bold;
   min-width: 100px;
+}
+
+.wildcard-suit {
+    color: white;
+}
+
+/* Makes the suit white */
+.wildcard-suit img {
+  filter: brightness(0) invert(1);
 }

@@ -4,13 +4,16 @@ import clubSvg from './assets/club.svg';
 import spadeSvg from './assets/spade.svg';
 
 export class Card {
-    static TYPES = ["ORIGINAL", "WILDCARD"];
-    
-    constructor(id, suite, value, type = Card.TYPES[0], status = "notSelected") {
+    static TYPES = {
+        ORIGINAL: 'ORIGINAL',
+        WILDCARD: 'WILDCARD'
+    };
+
+    constructor(id, suite, value, type = Card.TYPES.ORIGINAL, status = "notSelected") {
         this.id = id;
         this.suite = suite;
         this.value = value;
-        this.type = Card.TYPES[type];
+        this.type = type;
         this.status = status;
     }
 
@@ -28,14 +31,14 @@ export class Card {
     }
 
     isWildcard() {
-        return this.type === "WILDCARD";
+        return this.type === Card.TYPES.WILDCARD;
     }
 
     clone() {
         return new Card(this.id, this.suite, this.value, this.type, this.status);
     }
 
-    getSuitSvg () {
+    getSuitSvg() {
         switch(this.suite) {
             case 'HEARTS':
                 return heartSvg;
@@ -48,5 +51,5 @@ export class Card {
             default:
                 return null;
         }
-    };
+    }
 } 
