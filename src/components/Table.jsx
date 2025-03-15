@@ -106,6 +106,7 @@ export function Table() {
 
     return (
         <div className="table">
+            <h1 className="title">Card Manipulation</h1>
             <div className="topRow">
                 <div className="deckSpot">
                     {deckInstance.cards.length === 0 ? 
@@ -140,6 +141,36 @@ export function Table() {
                         <button onClick={() => shuffle()}>SHUFFLE</button>
                         <button onClick={() => wildcard()}>WILDCARD</button>
                     </div>
+                </div>
+            </div>
+            <div className="button-descriptions">
+                <div className="button-description">
+                    <span className="button-name">DECK:</span>
+                    <span>Click to deal one card at a time from the deck</span>
+                </div>
+                <div className="button-description">
+                    <span className="button-name">DEAL 5:</span>
+                    <span>Deals 5 new cards, clearing the current play area</span>
+                </div>
+                <div className="button-description">
+                    <span className="button-name">DEAL 7:</span>
+                    <span>Deals 7 new cards, clearing the current play area</span>
+                </div>
+                <div className="button-description">
+                    <span className="button-name">RESET:</span>
+                    <span>Returns all cards to the deck and shuffles them</span>
+                </div>
+                <div className="button-description">
+                    <span className="button-name">TOSS:</span>
+                    <span>Removes the selected card from play</span>
+                </div>
+                <div className="button-description">
+                    <span className="button-name">SHUFFLE:</span>
+                    <span>Randomly rearranges all cards in the play area</span>
+                </div>
+                <div className="button-description">
+                    <span className="button-name">WILDCARD:</span>
+                    <span>Adds a special wildcard to the play area</span>
                 </div>
             </div>
         </div>

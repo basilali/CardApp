@@ -1,4 +1,4 @@
-import { Card } from './Card';
+import {Card} from './Card';
 
 export class Deck {
     static SUITES = ["SPADES", "CLUBS", "HEARTS", "DIAMONDS"];
@@ -32,8 +32,7 @@ export class Deck {
         if (count > this.cards.length) {
             return null;
         }
-        const dealt = this.cards.splice(0, count);
-        return dealt;
+        return this.cards.splice(0, count);
     }
 
     returnCards(cards) {
