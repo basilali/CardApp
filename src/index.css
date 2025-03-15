@@ -13,34 +13,43 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 button {
   margin-top: 10px;
-  width: 25%;
-  height: 50px;
-  border-radius: 10px;
+  width: 30%;
+  min-width: 80px;
+  height: 40px;
+  border-radius: 8px;
   background-color: red;
   color: white;
   font-weight: bold;
   cursor: pointer;
+  border: none;
+  font-size: 14px;
 }
 
 .table {
   background-color: darkgreen;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  max-height: 90vh;
-  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .topRow {
   display: flex;
-  overflow: hidden;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .bottomRow {
@@ -50,23 +59,22 @@ button {
 .deckSpot {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .deck, .emptyDeck {
-  width: 100px;
-  height: 140px;
-  border: 3px solid black;
+  width: 80px;
+  height: 112px;
+  border: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 18px;
-  margin-right: 10px;
+  font-size: 16px;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 8px;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   box-sizing: border-box;
 }
 
@@ -85,111 +93,204 @@ button {
   padding: 10px;
   display: flex;
   gap: 10px;
-  border: 3px solid darkgreen;
+  border: 2px solid darkgreen;
   flex-wrap: wrap;
-  min-width: 320px;
-  border-radius: 10px;
-  max-height: 100vh;
-  overflow: auto;
+  flex: 1;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.notSelected, .selected {
-  width: 100px;
-  height: 140px;
+.card-container {
+  width: 80px;
+  height: 112px;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card-container:active {
+  transform: scale(0.95);
+}
+
+.card-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.value {
+  font-size: 24px;
   font-weight: bold;
+  margin: 2px 0;
+}
+
+.suite-symbol {
+  width: 30px;
+  height: 30px;
+}
+
+.title {
+  color: white;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.button-container {
+  display: block;
+  width: 100%;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.button-descriptions {
+  color: white;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.button-description {
+  margin: 10px 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.button-name {
+  font-weight: bold;
+  min-width: 80px;
+}
+
+.red-suit {
+  color: #E31B23;
+}
+
+.black-suit {
+  color: #000000;
+}
+
+.notSelected, .selected {
   border-radius: 8px;
   color: black;
   cursor: pointer;
 }
 
 .selected {
-  border: 5px solid royalblue;
+  border: 3px solid royalblue;
 }
 
-.value {
-  font-size: 40px;
-  font-weight: bold;
-}
-/* Wildcard styling */
 .notSelected.WILDCARD, .selected.WILDCARD {
   background: orangered;
 }
 
-.button-container {
-  display: block;
-}
-
-.buttonRow {
-  display: flex;
-  justify-content: space-between;
-}
-
-.card-container {
-    width: 100px;
-    height: 140px;
-    background: white;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.red-suit {
-    color: #E31B23;
-}
-
-.black-suit {
-    color: #000000;
-}
-
-.suite-symbol {
-    width: 50px;
-    height: 50px;
-}
-
-.title {
-  color: white;
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-.button-descriptions {
-  color: white;
-  margin-top: 20px;
-  padding: 15px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
-.button-description {
-  margin: 15px 0;
-  display: flex;
-  gap: 10px;
-}
-
-.button-name {
-  font-weight: bold;
-  min-width: 100px;
-}
-
 .wildcard-suit {
-    color: white;
+  color: white;
 }
 
-/* Makes the suit white */
 .wildcard-suit img {
   filter: brightness(0) invert(1);
+}
+
+@media (max-width: 480px) {
+  .table {
+    padding: 10px;
+  }
+
+  .button-descriptions {
+    font-size: 12px;
+  }
+
+  .button-name {
+    min-width: 60px;
+  }
+
+  button {
+    font-size: 12px;
+    height: 35px;
+  }
+
+  .card-container {
+    width: 70px;
+    height: 98px;
+  }
+
+  .deck, .emptyDeck {
+    width: 70px;
+    height: 98px;
+    font-size: 14px;
+  }
+
+  .value {
+    font-size: 20px;
+  }
+
+  .suite-symbol {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .table {
+    padding: 12px;
+  }
+
+  .card-container {
+    width: 75px;
+    height: 105px;
+  }
+
+  .deck, .emptyDeck {
+    width: 75px;
+    height: 105px;
+  }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .table {
+    padding: 8px;
+  }
+
+  .title {
+    margin-bottom: 8px;
+    
+  }
+
+  .button-descriptions {
+    display: none;
+  }
+
+  .card-container {
+    width: 65px;
+    height: 91px;
+  }
+
+  .deck, .emptyDeck {
+    width: 65px;
+    height: 91px;
+  }
+
+  .value {
+    font-size: 18px;
+  }
+
+  .suite-symbol {
+    width: 22px;
+    height: 22px;
+  }
 }
