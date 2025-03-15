@@ -15,7 +15,7 @@ A React-based card manipulation application that allows users to interact with a
    - When two cards are selected, they will automatically swap positions
 
 3. **Card Management**:
-   - TOSS: Removes the currently selected card from play
+   - TOSS: Discards the currently selected card entirely
    - RESET: Returns all cards to the deck and shuffles them
    - SHUFFLE: Randomly rearranges cards in the play area
    - WILDCARD: Adds a special wildcard to the play area
