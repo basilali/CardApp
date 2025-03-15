@@ -211,6 +211,10 @@ button {
     padding: 10px;
   }
 
+  .title {
+    font-size: 2rem;
+  }
+
   .button-descriptions {
     font-size: 12px;
   }
@@ -264,11 +268,6 @@ button {
 @media (max-height: 600px) and (orientation: landscape) {
   .table {
     padding: 8px;
-  }
-
-  .title {
-    margin-bottom: 8px;
-    
   }
 
   .button-descriptions {
