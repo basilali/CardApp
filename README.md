@@ -19,3 +19,5 @@ A React-based card manipulation application that allows users to interact with a
    - RESET: Returns all cards to the deck and shuffles them
    - SHUFFLE: Randomly rearranges cards in the play area
    - WILDCARD: Adds a special wildcard to the play area
+
+   Demo: https://card-app-amber.vercel.app/
