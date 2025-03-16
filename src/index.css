@@ -31,6 +31,11 @@ button {
   cursor: pointer;
   border: none;
   font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  opacity: 1;
 }
 
 .table {
@@ -120,20 +125,17 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  padding: 5px;
-  box-sizing: border-box;
 }
 
 .value {
-  font-size: 24px;
+  font-size: 2.3rem;
   font-weight: bold;
   margin: 2px 0;
 }
 
 .suite-symbol {
-  width: 30px;
-  height: 30px;
+  width: 42px;
+  height: 42px;
 }
 
 .title {
@@ -163,6 +165,28 @@ button {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   font-size: 14px;
+  position: relative;
+}
+
+.github-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 12px;
+  background-color: #111828;
+  border-radius: 10px;
+  max-width: 50px;
+}
+
+.github-link:hover {
+  opacity: 1;
+}
+
+.github-icon {
+  width: 40px;
+  height: 40px;
 }
 
 .button-description {
@@ -192,7 +216,7 @@ button {
 }
 
 .selected {
-  border: 3px solid royalblue;
+  border: 5px solid royalblue;
 }
 
 .notSelected.WILDCARD, .selected.WILDCARD {
@@ -208,45 +232,17 @@ button {
 }
 
 @media (max-width: 480px) {
-  .table {
-    padding: 10px;
-  }
-
   .title {
     font-size: 2rem;
   }
 
-  .button-descriptions {
-    font-size: 12px;
-  }
-
-  .button-name {
-    min-width: 60px;
-  }
-
-  button {
-    font-size: 12px;
-    height: 35px;
-  }
-
-  .card-container {
-    width: 70px;
-    height: 98px;
-  }
-
-  .deck, .emptyDeck {
-    width: 70px;
-    height: 98px;
-    font-size: 14px;
-  }
-
-  .value {
-    font-size: 20px;
-  }
-
   .suite-symbol {
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .github-link {
+    max-width: 100%;
   }
 }
 
@@ -263,34 +259,5 @@ button {
   .deck, .emptyDeck {
     width: 75px;
     height: 105px;
-  }
-}
-
-@media (max-height: 600px) and (orientation: landscape) {
-  .table {
-    padding: 8px;
-  }
-
-  .button-descriptions {
-    display: none;
-  }
-
-  .card-container {
-    width: 65px;
-    height: 91px;
-  }
-
-  .deck, .emptyDeck {
-    width: 65px;
-    height: 91px;
-  }
-
-  .value {
-    font-size: 18px;
-  }
-
-  .suite-symbol {
-    width: 22px;
-    height: 22px;
   }
 }
